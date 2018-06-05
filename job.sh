@@ -16,4 +16,4 @@ awk "NR == $SLURM_ARRAY_TASK_ID {print; exit}" ${commands} > ${command_list}
 echo "Doing line ${SLURM_ARRAY_TASK_ID}, $(cat ${command_list})"
 source ${command_list}
 echo "Finished line ${SLURM_ARRAY_TASK_ID}"
-#\rm -rf ${command_list}
+rm -rf ${command_list}
