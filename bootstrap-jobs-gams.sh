@@ -14,6 +14,9 @@
 #   E1:   CHANGEFLAGE1
 #   E2:   CHANGEFLAGE2
 #
+# Author:
+#   Guowei He <gh50@nyu.edu>
+#
 
 err() {
   echo "$@" >&2
@@ -56,14 +59,12 @@ main() {
     target_gms_script="${icase_directory}/UpdatedModel.gms"
 
     cp "${template_directory}/UpdatedModel.gms" "${target_gms_script}"
-#    cp "${template_directory}/JordanDataUp.gdx" ${icase_directory}/
     
     sed -i "s/CHANGEFLAGBETA/${beta}/" ${target_gms_script}
     sed -i "s/CHANGEFLAGE1/${e1}/" ${target_gms_script}
     sed -i "s/CHANGEFLAGE2/${e2}/" ${target_gms_script}
   done
 
-  # create job array script
 }
 
 main "$@"
