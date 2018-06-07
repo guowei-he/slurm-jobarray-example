@@ -10,7 +10,7 @@
 #   A bunch of folders. Each one will containing the job script from template, input and individual parameters.
 #
 # Keyword:
-#   CHANGEFLAGVAR<0-x>
+#   CHANGEFLAGVAR<1-x>
 #
 # Author:
 #   Guowei He <gh50@nyu.edu>
@@ -56,7 +56,7 @@ main() {
     echo "Generating case ${icase} in ${target_file}"
 
     line=$(awk "NR == $icase {print; exit}" ${inputfile})
-    iword=0
+    iword=1
     for word in $line; do
       keyword="${keybase}${iword}"
       echo "Changed: ${word} with keyword ${keyword}"
